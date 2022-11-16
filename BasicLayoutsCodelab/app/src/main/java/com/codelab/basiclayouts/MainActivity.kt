@@ -22,6 +22,7 @@ import androidx.activity.compose.setContent
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -41,6 +42,11 @@ fun SearchBar(
     modifier: Modifier = Modifier
 ) {
     // Implement composable here
+    TextField(
+        value = "",
+        onValueChange ={},
+        modifier = Modifier
+    )
 }
 
 // Step: Align your body - Alignment
