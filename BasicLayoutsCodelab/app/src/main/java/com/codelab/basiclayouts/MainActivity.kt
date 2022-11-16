@@ -98,14 +98,14 @@ fun AlignYourBodyElement(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(id = R.drawable.ab1_inversions),
+            painter = painterResource(drawable),
             contentDescription ="",
             contentScale = ContentScale.Crop,
             modifier = modifier
                 .size(88.dp)
                 .clip(CircleShape)
         )
-        Text(text = stringResource(id = R.string.ab1_inversions),
+        Text(text = stringResource(text),
         style = MaterialTheme.typography.h3 ,
         modifier = Modifier.paddingFromBaseline(
             top = 24.dp , bottom = 8.dp
@@ -130,12 +130,12 @@ fun FavoriteCollectionCard(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
-                painter = painterResource(id = R.drawable.fc2_nature_meditations) ,
+                painter = painterResource(drawable) ,
                 contentDescription = null,
                 modifier = Modifier.size(56.dp)
             )
             Text(
-                text = stringResource(id = R.string.fc2_nature_meditations),
+                text = stringResource(text),
                 style = MaterialTheme.typography.h3
             )
         }
