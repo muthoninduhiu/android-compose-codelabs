@@ -107,6 +107,22 @@ fun FavoriteCollectionCard(
     modifier: Modifier = Modifier
 ) {
     // Implement composable here
+    Surface(
+        shape = MaterialTheme.shapes.small,
+        modifier = modifier
+    ){
+        Row {
+            Image(
+                painter = painterResource(id = R.drawable.fc2_nature_meditations) ,
+                contentDescription = null
+            )
+            Text(
+                text = stringResource(id = R.string.fc2_nature_meditations),
+                style = MaterialTheme.typography.h3
+            )
+        }
+
+    }
 }
 
 // Step: Align your body row - Arrangements
