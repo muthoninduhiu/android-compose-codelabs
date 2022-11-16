@@ -24,6 +24,9 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
@@ -90,7 +93,7 @@ fun AlignYourBodyElement(
         Image(
             painter = painterResource(id = R.drawable.ab1_inversions),
             contentDescription ="",
-            contentScale = ContentScale.Fit,
+            contentScale = ContentScale.Crop,
             modifier = modifier
                 .size(88.dp)
                 .clip(CircleShape)
@@ -140,7 +143,10 @@ fun AlignYourBodyRow(
 ) {
     // Implement composable here
     LazyRow(
-        modifier = modifier
+        contentPadding = PaddingValues(horizontal = 16.dp),
+        modifier = modifier,
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+
     ) {
         items(alignYourBodyData) { item ->
             AlignYourBodyElement(item.drawable, item.text)
@@ -154,6 +160,17 @@ fun FavoriteCollectionsGrid(
     modifier: Modifier = Modifier
 ) {
     // Implement composable here
+    LazyHorizontalGrid(
+        rows = GridCells.Fixed(2),
+        modifier = modifier.height(120.dp),
+        contentPadding = PaddingValues(horizontal = 16.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ){
+        items(favoriteCollectionsData) { item ->
+            FavoriteCollectionCard(item.drawable, item.text)
+        }
+    }
 }
 
 // Step: Home section - Slot APIs
