@@ -22,6 +22,7 @@ import androidx.activity.compose.setContent
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -33,7 +34,10 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.Spa
+import androidx.compose.material.icons.filled.VerifiedUser
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -213,11 +217,43 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     }
 }
 
-
 // Step: Bottom navigation - Material
 @Composable
 private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
     // Implement composable here
+    BottomNavigation(
+        backgroundColor = MaterialTheme.colors.background,
+        modifier = modifier
+    ) {
+        BottomNavigationItem(selected = true  , onClick = { /*TODO*/ },
+        icon = {
+            Icon(
+                imageVector = Icons.Default.Spa,
+                contentDescription = null
+            )},
+            label = {
+                Text(text = stringResource(id = R.string.bottom_navigation_home))
+            })
+        BottomNavigationItem(selected = true  , onClick = { /*TODO*/ },
+            icon = {
+                Icon(
+                    imageVector = Icons.Default.AccountCircle,
+                    contentDescription = null
+                )},
+            label = {
+                Text(text = stringResource(id = R.string.bottom_navigation_profile))
+            })
+        BottomNavigationItem(selected = true  , onClick = { /*TODO*/ },
+            icon = {
+                Icon(
+                    imageVector = Icons.Default.VerifiedUser,
+                    contentDescription = null
+                )},
+            label = {
+                Text(text = stringResource(id = R.string.bottom_navigation_verified))
+            })
+
+    }
 }
 
 // Step: MySoothe App - Scaffold
