@@ -20,10 +20,10 @@ fun WaterCounter(modifier : Modifier = Modifier){
         if(count > 0){
             Text(text = "You have had $count glasses.")
         }
-
         Row(){
             Button(onClick = { count++ },
-                Modifier.padding(top = 8.dp)) {
+                Modifier.padding(top = 8.dp),
+                enabled = count < 10) {
                 Text(text = "Add One")
             }
             Button(onClick = { count-- },
