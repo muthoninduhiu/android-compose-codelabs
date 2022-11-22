@@ -1,6 +1,7 @@
 package com.soni.stateincompose
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -16,9 +17,15 @@ fun WaterCounter(modifier : Modifier = Modifier){
         //val count: MutableState<Int> = remember{ mutableStateOf(0) }
         var count by remember { mutableStateOf(0)}
         Text(text = "You have had $count glasses.")
-        Button(onClick = { count++},
-            Modifier.padding(top = 8.dp)) {
-            Text(text = "Add One")
+        Row(){
+            Button(onClick = { count++ },
+                Modifier.padding(top = 8.dp)) {
+                Text(text = "Add One")
+            }
+            Button(onClick = { count-- },
+                Modifier.padding(top = 8.dp)) {
+                Text(text = "Remove One")
+            }
         }
     }
 }
