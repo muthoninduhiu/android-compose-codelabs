@@ -16,7 +16,11 @@ fun WaterCounter(modifier : Modifier = Modifier){
     Column( modifier = modifier.padding(16.dp)){
         //val count: MutableState<Int> = remember{ mutableStateOf(0) }
         var count by remember { mutableStateOf(0)}
-        Text(text = "You have had $count glasses.")
+
+        if(count > 0){
+            Text(text = "You have had $count glasses.")
+        }
+
         Row(){
             Button(onClick = { count++ },
                 Modifier.padding(top = 8.dp)) {
