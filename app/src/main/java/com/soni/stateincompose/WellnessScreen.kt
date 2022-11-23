@@ -7,5 +7,6 @@ import androidx.compose.ui.Modifier
 fun WellnessScreen(
     modifier : Modifier = Modifier
 ) {
-    WaterCounter(modifier)
+   StatefulCounter()
+    WellnessTaskList()
 }
