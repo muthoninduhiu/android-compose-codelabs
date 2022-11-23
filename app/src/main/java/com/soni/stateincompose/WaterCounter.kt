@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -15,10 +16,10 @@ import com.soni.stateincompose.ui.theme.StateInComposeTheme
 fun WaterCounter(modifier : Modifier = Modifier){
     Column( modifier = modifier.padding(16.dp)){
         //val count: MutableState<Int> = remember{ mutableStateOf(0) }
-        var count by remember { mutableStateOf(0)}
+        var count by rememberSaveable { mutableStateOf(0)}
 
         if(count > 0){
-            var showTask by remember { mutableStateOf(true) }
+            var showTask by rememberSaveable { mutableStateOf(true) }
             if(showTask){
                 WellnessTaskItem(
                     onClose = { showTask = false },
