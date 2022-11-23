@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 fun WellnessTaskItem(
     taskName: String,
     checked: Boolean,
-    onCheckedChange: (Boolean) -> Unit,
+    onCheckedTask: (Boolean) -> Unit,
     onClose: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -33,7 +33,7 @@ fun WellnessTaskItem(
         )
         Checkbox(
             checked = checked,
-            onCheckedChange = onCheckedChange
+            onCheckedChange = onCheckedTask
         )
         IconButton(onClick = onClose) {
             Icon(Icons.Filled.Close, contentDescription = "Close")
@@ -45,16 +45,14 @@ fun WellnessTaskItem(
 fun WellnessTaskItem(
     taskName: String,
     onClose: () -> Unit,
-    modifier: Modifier = Modifier,
-    onCheckedTask: Any,
-    checked: Boolean
+    modifier: Modifier = Modifier
 ) {
     var checkedState by rememberSaveable { mutableStateOf(false) }
 
     WellnessTaskItem(
         taskName = taskName,
         checked = checkedState,
-        onCheckedChange = { newValue -> checkedState = newValue },
+        onCheckedTask = { newValue -> checkedState = newValue },
         onClose = onClose, // we will implement this later!
         modifier = modifier,
     )
