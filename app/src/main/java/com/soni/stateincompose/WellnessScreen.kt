@@ -2,6 +2,8 @@ package com.soni.stateincompose
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.toMutableStateList
 import androidx.compose.ui.Modifier
 
 @Composable
@@ -10,6 +12,8 @@ fun WellnessScreen(
 ) {
     Column(modifier = modifier){
         StatefulCounter()
-        WellnessTaskList()
+        val list  = remember { getWellnessTasks().toMutableStateList()}
+        WellnessTaskList(list = list, onCloseTask = {task -> list.remove(task)})
     }
 }
+private fun getWellnessTasks() = List(20){i -> WellnessTask(i,"Task $i")}
