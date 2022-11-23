@@ -1,5 +1,6 @@
 package com.soni.stateincompose
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
@@ -7,6 +8,8 @@ import androidx.compose.ui.Modifier
 fun WellnessScreen(
     modifier : Modifier = Modifier
 ) {
-   StatefulCounter()
-    WellnessTaskList()
+    Column(modifier = modifier){
+        StatefulCounter()
+        WellnessTaskList()
+    }
 }
