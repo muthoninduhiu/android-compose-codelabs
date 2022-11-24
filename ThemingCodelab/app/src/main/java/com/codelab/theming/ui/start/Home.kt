@@ -209,8 +209,10 @@ fun PostItem(
 @Composable
 private fun PostItemPreview() {
     val post = remember { PostRepo.getFeaturedPost() }
-    Surface {
-        PostItem(post = post)
+    JetNewsTheming{
+        Surface {
+            PostItem(post = post)
+        }
     }
 }
 
@@ -218,7 +220,9 @@ private fun PostItemPreview() {
 @Composable
 private fun FeaturedPostPreview() {
     val post = remember { PostRepo.getFeaturedPost() }
-    FeaturedPost(post = post)
+    JetNewsTheming{
+        FeaturedPost(post = post)
+    }
 }
 
 @Preview("Home")
