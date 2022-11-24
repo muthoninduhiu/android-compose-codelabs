@@ -3,6 +3,7 @@ package com.codelab.theming.ui.start.theme
 import android.content.res.Resources.Theme
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
@@ -29,7 +30,7 @@ private val lightColors = lightColors(
     error = Red800
 )
 
-private val darkColors = lightColors(
+private val darkColors = darkColors(
     primary = Red300,
     primaryVariant = Red700,
     onPrimary = Color.Black,
