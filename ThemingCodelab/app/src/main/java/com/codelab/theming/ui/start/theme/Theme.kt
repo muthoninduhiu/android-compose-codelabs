@@ -9,6 +9,7 @@ import androidx.compose.ui.graphics.Color
 fun JetNewsTheming(content: @Composable () -> Unit){
     MaterialTheme(
         typography = JetNewsTypography,
+        shapes = JetNewsShape,
         content = content,
         colors = lightColors
     )
