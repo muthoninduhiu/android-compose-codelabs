@@ -7,7 +7,10 @@ import androidx.compose.ui.graphics.Color
 
 @Composable
 fun JetNewsTheming(content: @Composable () -> Unit){
-    MaterialTheme(content = content)
+    MaterialTheme(
+        content = content,
+        colors = lightColors
+    )
 }
 private val lightColors = lightColors(
     primary = Red700,
