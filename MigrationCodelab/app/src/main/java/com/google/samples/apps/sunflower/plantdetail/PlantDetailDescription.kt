@@ -33,12 +33,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.samples.apps.sunflower.R
+import com.google.samples.apps.sunflower.data.Plant
 import com.google.samples.apps.sunflower.viewmodels.PlantDetailViewModel
 
 @Composable
 fun PlantDetailDescription(plantDetailViewModel: PlantDetailViewModel) {
     val plant by plantDetailViewModel.plant.observeAsState()
+
+    plant?.let {
+        PlantDetailContent(it)
+    }
 }
+
+
 
 @Composable
 private fun PlantName(name: String) {
