@@ -77,8 +77,7 @@ private fun PlantWatering(wateringInterval: Int){
             .padding(horizontal = dimensionResource(id = R.dimen.margin_small))
             .align(Alignment.CenterHorizontally)
 
-        val normalPadding = Modifier
-            .padding(dimensionResource(id = R.dimen.margin_normal))
+        val normalPadding = dimensionResource(id = R.dimen.margin_normal)
 
         val wateringIntervalText = pluralStringResource(
             R.plurals.watering_needs_suffix,
